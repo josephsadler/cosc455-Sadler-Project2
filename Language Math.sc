@@ -3,6 +3,7 @@ val chinese: List[String] = List("ling", "yi", "er", "san", "si", "wu", "liu", "
 val english: List[String] = List("zero", "one", "two", "three", "four", "five", "six", "seven", "eight", "nine", "ten")
 
 
+//Retrieves the translated list and performs the necessary operations on that list
 def go(list : List[String]) : Unit = {
   val intList : List[Int] = goHelper(list)
 
@@ -11,14 +12,17 @@ def go(list : List[String]) : Unit = {
   println("Multiplication: " + printList(intList, " * ") + " = " + goMultiply(intList) + " ")
 }
 
+//Performs addition on translated list
 def goAddition(list : List[Int]) : Int = {
   list.foldLeft(0)(_ + _)
 }
 
+//Performs multiplication on translated list
 def goMultiply(list : List[Int]) : Int = {
   list.foldLeft(1)(_ * _)
 }
 
+//Translates the list from english and chinese to a List[Int]
 def goHelper(list : List[String]) : List[Int] = {
   list match {
     case Nil => Nil
@@ -34,6 +38,7 @@ def goHelper(list : List[String]) : List[Int] = {
   }
 }
 
+//Prints a list with a character (' ', '+', '*') between each number
 def printList(list : List[Int], s : String) : String = {
   list match {
     case Nil => ""
