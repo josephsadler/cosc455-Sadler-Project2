@@ -39,7 +39,7 @@ def goldbach(n : Int) : Unit = {
   ((n >= 2) && (n % 2 == 0)) match {
     case false => Nil
     case true =>
-      goldbachHelper(n, n-1) match {
+      goldbachHelper(n, n-2) match {
         case Nil =>
         case head :: tail => println(head + " + " + tail.head + " = " + n + " ")
       }
@@ -52,7 +52,7 @@ def goldbachHelper(n : Int, index : Int) : List[Int] = {
     case true =>
       (prime(index) && index <= n) match {
         case false => goldbachHelper(n, index - 1)
-        case true => index::goldbachHelper(n-index, index-1)
+        case true => index::goldbachHelper(n-index, n-index)
       }
   }
 }
@@ -73,5 +73,8 @@ println("28: ")
 println(goldbach(28) + " ")
 println("27: ")
 println(goldbach(27) + " ")
+println("4: ")
+println(goldbach(4) + " ")
+
 
 

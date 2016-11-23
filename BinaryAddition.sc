@@ -136,11 +136,10 @@ def binarySubtraction(pList: List[Int], qList: List[Int]): List[Int] = {
 
 def toTwosComplement(aList : List[Int]) : List[Int] = {
   val twos : List[Int] = List(1)
-  println("heloo     " +  binaryAddition(convertBooleanListToIntList(convertIntListToBooleanList(aList).map(b => !b)), twos))
   binaryAddition(convertBooleanListToIntList(convertIntListToBooleanList(aList).map(b => !b)), twos)
 }
 
-val test1 : List[Int] = List(0, 1, 1, 1)
+val test1 : List[Int] = List(0, 1, 1, 0)
 val test2 : List[Int] = List(0, 0, 0, 1)
 
 binarySubtraction(test1, test2)
